@@ -7,5 +7,7 @@
     <dimen name="fab_elevation">2dp</dimen>
     <dimen name="fab_press_translation_z">6dp</dimen>
     <dimen name="fab_margin">24dp</dimen>
+    <dimen name="elevation">8dp</dimen>
+    <dimen name="app_bar_layout_height">112dp</dimen>
 
 </resources>
