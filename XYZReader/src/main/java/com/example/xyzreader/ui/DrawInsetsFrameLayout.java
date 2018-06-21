@@ -1,19 +1,3 @@
-/*
- * Copyright 2014 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.example.xyzreader.ui;
 
 import android.content.Context;
@@ -30,14 +14,11 @@ import com.example.xyzreader.R;
 
 
 public class DrawInsetsFrameLayout extends FrameLayout {
-    private Drawable mInsetBackground;
-    private Drawable mTopInsetBackground;
-    private Drawable mBottomInsetBackground;
-    private Drawable mSideInsetBackground;
 
-    private Rect mInsets;
-    private Rect mTempRect = new Rect();
-    private OnInsetsCallback mOnInsetsCallback;
+    private Drawable insetBackground;
+    private Rect insets;
+    private Rect tempRectangle = new Rect();
+    private OnInsetsCallback onInsetsCallback;
 
     public DrawInsetsFrameLayout(Context context) {
         super(context);
@@ -59,21 +40,21 @@ public class DrawInsetsFrameLayout extends FrameLayout {
                 R.styleable.DrawInsetsFrameLayout, defStyle, 0);
         assert a != null;
 
-        mInsetBackground = a.getDrawable(R.styleable.DrawInsetsFrameLayout_insetBackground);
+        insetBackground = a.getDrawable(R.styleable.DrawInsetsFrameLayout_insetBackground);
 
         a.recycle();
     }
 
     public void setInsetBackground(Drawable insetBackground) {
-        if (mInsetBackground != null) {
-            mInsetBackground.setCallback(null);
+        if (this.insetBackground != null) {
+            this.insetBackground.setCallback(null);
         }
 
         if (insetBackground != null) {
             insetBackground.setCallback(this);
         }
 
-        mInsetBackground = insetBackground;
+        this.insetBackground = insetBackground;
         postInvalidateOnAnimation();
     }
 
@@ -83,35 +64,35 @@ public class DrawInsetsFrameLayout extends FrameLayout {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             requestApplyInsets();
         }
-        if (mInsetBackground != null) {
-            mInsetBackground.setCallback(this);
+        if (insetBackground != null) {
+            insetBackground.setCallback(this);
         }
     }
 
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        if (mInsetBackground != null) {
-            mInsetBackground.setCallback(null);
+        if (insetBackground != null) {
+            insetBackground.setCallback(null);
         }
     }
 
     public void setOnInsetsCallback(OnInsetsCallback onInsetsCallback) {
-        mOnInsetsCallback = onInsetsCallback;
+        this.onInsetsCallback = onInsetsCallback;
     }
 
     @Override
     public WindowInsets onApplyWindowInsets(WindowInsets insets) {
         insets = super.onApplyWindowInsets(insets);
-        mInsets = new Rect(
+        this.insets = new Rect(
                 insets.getSystemWindowInsetLeft(),
                 insets.getSystemWindowInsetTop(),
                 insets.getSystemWindowInsetRight(),
                 insets.getSystemWindowInsetBottom());
         setWillNotDraw(false);
         postInvalidateOnAnimation();
-        if (mOnInsetsCallback != null) {
-            mOnInsetsCallback.onInsetsChanged(mInsets);
+        if (onInsetsCallback != null) {
+            onInsetsCallback.onInsetsChanged(this.insets);
         }
         return insets;
     }
@@ -122,38 +103,34 @@ public class DrawInsetsFrameLayout extends FrameLayout {
         int width = getWidth();
         int height = getHeight();
 
-        if (mInsets != null) {
-            // Top
-            mTempRect.set(0, 0, width, mInsets.top);
-            if (mInsetBackground != null) {
-                mInsetBackground.setBounds(mTempRect);
-                mInsetBackground.draw(canvas);
+        if (insets != null) {
+            tempRectangle.set(0, 0, width, insets.top);
+            if (insetBackground != null) {
+                insetBackground.setBounds(tempRectangle);
+                insetBackground.draw(canvas);
             }
 
-            // Bottom
-            mTempRect.set(0, height - mInsets.bottom, width, height);
-            if (mInsetBackground != null) {
-                mInsetBackground.setBounds(mTempRect);
-                mInsetBackground.draw(canvas);
+            tempRectangle.set(0, height - insets.bottom, width, height);
+            if (insetBackground != null) {
+                insetBackground.setBounds(tempRectangle);
+                insetBackground.draw(canvas);
             }
 
-            // Left
-            mTempRect.set(0, mInsets.top, mInsets.left, height - mInsets.bottom);
-            if (mInsetBackground != null) {
-                mInsetBackground.setBounds(mTempRect);
-                mInsetBackground.draw(canvas);
+            tempRectangle.set(0, insets.top, insets.left, height - insets.bottom);
+            if (insetBackground != null) {
+                insetBackground.setBounds(tempRectangle);
+                insetBackground.draw(canvas);
             }
 
-            // Right
-            mTempRect.set(width - mInsets.right, mInsets.top, width, height - mInsets.bottom);
-            if (mInsetBackground != null) {
-                mInsetBackground.setBounds(mTempRect);
-                mInsetBackground.draw(canvas);
+            tempRectangle.set(width - insets.right, insets.top, width, height - insets.bottom);
+            if (insetBackground != null) {
+                insetBackground.setBounds(tempRectangle);
+                insetBackground.draw(canvas);
             }
         }
     }
 
-    public static interface OnInsetsCallback {
-        public void onInsetsChanged(Rect insets);
+    public interface OnInsetsCallback {
+        void onInsetsChanged(Rect insets);
     }
 }
