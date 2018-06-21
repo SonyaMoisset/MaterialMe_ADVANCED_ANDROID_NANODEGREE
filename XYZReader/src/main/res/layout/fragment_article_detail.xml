@@ -88,8 +88,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_below="@+id/meta_bar"
-                        android:layout_marginEnd="24dp"
-                        android:layout_marginTop="-44dp"
+                        android:layout_marginEnd="@dimen/detail_fab_margin_end"
+                        android:layout_marginTop="@dimen/detail_fab_button"
                         android:contentDescription="@string/action_share"
                         android:src="@drawable/ic_share"
                         app:borderWidth="0dp"
@@ -111,6 +111,16 @@
                         android:textColor="@android:color/black"
                         android:textColorLink="?attr/colorAccent"
                         android:textSize="16sp"/>
+
+                    <Button
+                        android:id="@+id/read_more_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/detail_metabar_vert_padding"
+                        android:text="Read more"
+                        android:layout_below="@+id/article_body"
+                        android:textColor="@color/theme_primary"
+                        android:visibility="visible" />
 
                 </RelativeLayout>
 

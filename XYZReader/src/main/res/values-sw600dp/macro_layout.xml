@@ -1,6 +1,6 @@
 <resources>
     <!-- list -->
-    <integer name="list_column_count">3</integer>
+    <integer name="list_column_count">2</integer>
 
     <!-- detail -->
     <dimen name="detail_photo_height">384dp</dimen>
@@ -12,4 +12,6 @@
     <dimen name="detail_body_top_margin">64dp</dimen>
     <dimen name="detail_body_bottom_margin">96dp</dimen>
     <dimen name="detail_text_padding">64dp</dimen>
+    <dimen name="detail_fab_button">-60dp</dimen>
+    <dimen name="detail_fab_margin_end">48dp</dimen>
 </resources>
