@@ -24,7 +24,7 @@
                     android:id="@+id/photo"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/detail_photo_height"
-                    android:contentDescription="Article Image"
+                    android:contentDescription="@string/article_image"
                     android:scaleType="centerCrop"/>
 
                 <View
@@ -90,6 +90,7 @@
                         android:layout_below="@+id/meta_bar"
                         android:layout_marginEnd="@dimen/detail_fab_margin_end"
                         android:layout_marginTop="@dimen/detail_fab_button"
+                        app:backgroundTint="@android:color/holo_green_dark"
                         android:contentDescription="@string/action_share"
                         android:src="@drawable/ic_share"
                         app:borderWidth="0dp"
@@ -114,13 +115,22 @@
 
                     <Button
                         android:id="@+id/read_more_button"
+                        style="@style/TextAppearance.AppCompat.Button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/detail_metabar_vert_padding"
-                        android:text="Read more"
                         android:layout_below="@+id/article_body"
-                        android:textColor="@color/theme_primary"
-                        android:visibility="visible" />
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginEnd="@dimen/detail_inner_horiz_margin"
+                        android:layout_marginStart="@dimen/detail_inner_horiz_margin"
+                        android:layout_marginTop="16dp"
+                        android:background="@android:color/holo_green_dark"
+                        android:fontFamily="sans-serif-condensed"
+                        android:paddingEnd="32dp"
+                        android:paddingStart="32dp"
+                        android:text="@string/read_more"
+                        android:textColor="@android:color/white"
+                        android:visibility="visible"/>
 
                 </RelativeLayout>
 
