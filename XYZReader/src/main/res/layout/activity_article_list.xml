@@ -6,10 +6,9 @@
     android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/toolbar_container"
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_bar_layout_height"
-        android:background="@android:color/holo_green_dark"
+        android:background="@color/primary_color"
         android:elevation="@dimen/elevation">
 
         <android.support.design.widget.CollapsingToolbarLayout
@@ -19,14 +18,13 @@
             app:layout_scrollFlags="scroll|enterAlways">
 
             <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_gravity="bottom"
                 android:layout_marginEnd="@dimen/list_toolbar_side_margin"
                 android:layout_marginStart="@dimen/list_toolbar_side_margin"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                app:contentInsetStart="16dp"
+                app:contentInsetStart="@dimen/activity_article_list_content_inset_start"
                 app:layout_collapseMode="pin"
                 app:logo="@drawable/logo"
                 app:logoDescription="@string/app_name"/>

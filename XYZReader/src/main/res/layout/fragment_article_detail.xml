@@ -39,8 +39,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/detail_card_top_margin"
-                android:background="#fff"
-                android:elevation="2dp"
+                android:background="@color/text_icon"
+                android:elevation="@dimen/fragment_article_detail_maxwidth_layout_elevation"
                 android:maxWidth="@dimen/detail_card_max_width"
                 android:orientation="vertical">
 
@@ -63,23 +63,13 @@
 
                         <TextView
                             android:id="@+id/article_title"
-                            style="@style/TextAppearance.AppCompat.Title"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-condensed"
-                            android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
-                            android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
-                            android:textColor="#fff"
-                            android:textSize="32sp"/>
+                            style="@style/FragmentArticleDetailTitle"
+                            android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"/>
 
                         <TextView
                             android:id="@+id/article_byline"
-                            style="@style/TextAppearance.AppCompat.Subhead"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-condensed"
-                            android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
-                            android:textColor="#8fff"/>
+                            style="@style/FragmentArticleDetailByline"
+                            android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"/>
                     </LinearLayout>
 
                     <android.support.design.widget.FloatingActionButton
@@ -90,46 +80,31 @@
                         android:layout_below="@+id/meta_bar"
                         android:layout_marginEnd="@dimen/detail_fab_margin_end"
                         android:layout_marginTop="@dimen/detail_fab_button"
-                        app:backgroundTint="@android:color/holo_green_dark"
                         android:contentDescription="@string/action_share"
                         android:src="@drawable/ic_share"
+                        app:backgroundTint="@color/accent_color"
                         app:borderWidth="0dp"
                         app:elevation="@dimen/fab_elevation"
                         app:fabSize="normal"/>
 
                     <TextView
                         android:id="@+id/article_body"
-                        style="@style/TextAppearance.AppCompat.Body1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        style="@style/FragmentArticleDetailBody"
                         android:layout_below="@+id/meta_bar"
                         android:layout_marginEnd="@dimen/detail_inner_horiz_margin"
                         android:layout_marginStart="@dimen/detail_inner_horiz_margin"
-                        android:layout_marginTop="24dp"
-                        android:ellipsize="end"
-                        android:fontFamily="sans-serif-condensed"
-                        android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
-                        android:textColor="@android:color/black"
-                        android:textColorLink="?attr/colorAccent"
-                        android:textSize="16sp"/>
+                        android:layout_marginTop="@dimen/margin_24"
+                        android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"/>
 
                     <Button
                         android:id="@+id/read_more_button"
-                        style="@style/TextAppearance.AppCompat.Button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/FragmentArticleDetailButton"
                         android:layout_below="@+id/article_body"
-                        android:layout_centerHorizontal="true"
                         android:layout_marginBottom="16dp"
                         android:layout_marginEnd="@dimen/detail_inner_horiz_margin"
                         android:layout_marginStart="@dimen/detail_inner_horiz_margin"
-                        android:layout_marginTop="16dp"
-                        android:background="@android:color/holo_green_dark"
-                        android:fontFamily="sans-serif-condensed"
-                        android:paddingEnd="32dp"
-                        android:paddingStart="32dp"
+                        android:layout_marginTop="@dimen/margin_16"
                         android:text="@string/read_more"
-                        android:textColor="@android:color/white"
                         android:visibility="visible"/>
 
                 </RelativeLayout>

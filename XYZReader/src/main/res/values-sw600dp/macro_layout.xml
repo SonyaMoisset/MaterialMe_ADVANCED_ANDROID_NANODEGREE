@@ -7,11 +7,6 @@
     <dimen name="detail_card_top_margin">384dp</dimen>
     <dimen name="detail_inner_horiz_margin">64dp</dimen>
     <dimen name="detail_metabar_vert_padding">32dp</dimen>
-    <dimen name="detail_metabar_title_bottom_padding">8dp</dimen>
-    <dimen name="detail_title_bottom_margin">62dp</dimen>
-    <dimen name="detail_body_top_margin">64dp</dimen>
-    <dimen name="detail_body_bottom_margin">96dp</dimen>
-    <dimen name="detail_text_padding">64dp</dimen>
     <dimen name="detail_fab_button">-60dp</dimen>
     <dimen name="detail_fab_margin_end">48dp</dimen>
 </resources>

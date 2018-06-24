@@ -1,13 +1,23 @@
 <resources>
+    <dimen name="padding_0">0dp</dimen>
+    <dimen name="padding_4">4dp</dimen>
+    <dimen name="padding_16">16dp</dimen>
+    <dimen name="padding_32">32dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_24">24dp</dimen>
+
+    <dimen name="list_item_article_text_size">32sp</dimen>
+    <dimen name="fragment_article_detail_title">32sp</dimen>
+    <dimen name="fragment_article_text_size">16sp</dimen>
+
     <!-- detail -->
-    <dimen name="detail_title_text_size">32sp</dimen>
-    <dimen name="detail_body_text_size">22sp</dimen>
     <item name="detail_body_line_spacing_multiplier" format="float" type="fraction">1.25</item>
 
     <dimen name="fab_elevation">2dp</dimen>
-    <dimen name="fab_press_translation_z">6dp</dimen>
-    <dimen name="fab_margin">24dp</dimen>
     <dimen name="elevation">8dp</dimen>
     <dimen name="app_bar_layout_height">112dp</dimen>
+    <dimen name="activity_article_detail_image_button">56dp</dimen>
+    <dimen name="activity_article_list_content_inset_start">16dp</dimen>
+    <dimen name="fragment_article_detail_maxwidth_layout_elevation">2dp</dimen>
 
 </resources>
