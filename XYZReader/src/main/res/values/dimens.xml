@@ -13,7 +13,7 @@
     <!-- detail -->
     <item name="detail_body_line_spacing_multiplier" format="float" type="fraction">1.25</item>
 
-    <dimen name="fab_elevation">2dp</dimen>
+    <dimen name="fab_elevation">6dp</dimen>
     <dimen name="elevation">8dp</dimen>
     <dimen name="app_bar_layout_height">112dp</dimen>
     <dimen name="activity_article_detail_image_button">56dp</dimen>
